@@ -1,0 +1,23 @@
+<div class="backdrop"></div>
+<header class="main-header">
+    <nav class="main-header__nav">
+        <ul class="main-header__item-list">
+        </ul>
+        <ul class="main-header__item-list">
+            <% if (!isLogin) { %>
+                <li class="main-header__item">
+                    <a class="<%= path === 'users/login' ? 'active' : '' %>" href="/users/login">Login</a>
+                </li>
+                <li class="main-header__item">
+                    <a class="<%= path === 'users/signup' ? 'active' : '' %>" href="/users/signup">Signup</a>
+                </li>
+            <% } else { %>
+                <li class="main-header__item">
+                    <form action="/users/logout" method="post">
+                        <button type="submit">Logout</button>
+                    </form>
+                </li>
+            <% } %>
+        </ul>
+    </nav>
+</header>
